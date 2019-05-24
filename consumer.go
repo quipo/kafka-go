@@ -151,7 +151,7 @@ func (consumer *BrokerConsumer) reconnectFromEarliestAvailableOffset(conn *net.T
 	if err != nil {
 		return 0, err
 	}
-	return binary.BigEndian.Uint64(payload[0:]), nil
+	return binary.BigEndian.Uint64(payload[4:]), nil
 }
 
 // Consume makes a single fetch request and sends the messages in the message set to a handler function
